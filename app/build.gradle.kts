@@ -1,9 +1,13 @@
 plugins {
     alias(libs.plugins.android.application)
+
+    // Add the Google services Gradle plugin
+    id("com.google.gms.google-services")
+
 }
 
 android {
-    namespace = "com.example.learninfy"
+    namespace = "com.example.learnify"
     compileSdk = 36
 
     defaultConfig {
@@ -32,6 +36,9 @@ android {
 }
 
 dependencies {
+
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:35.1.0"))
 
     implementation(libs.appcompat)
     implementation(libs.material)
